@@ -12,7 +12,7 @@ function ProductCard({ nft, cart, setCart }) {
     }
 
     return (
-        <Card sx={{ maxWidth: 300, maxHeight: 300 }}>
+        <Card sx={{ maxWidth: 500, maxHeight: 500 }}>
             <CardActionArea>
                 <CardMedia
                     component="img"
