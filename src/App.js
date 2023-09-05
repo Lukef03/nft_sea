@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import Cart from './pages/Cart';
+import Login from './pages/Login';
 
 function App() {
   const [mode, setMode] = useState('Light');
@@ -38,8 +39,8 @@ function App() {
         <Route exact path="/home" element={<Home cart={cart} setCart={setCart} />} />
         {/* <Route path="/nft/:id" element={<NFTInfo cart={cart} setCart={setCart} />} /> */}
         <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
-        {/* <Route path="/login" element={<Login setAccount={setAccount} />} />
-        <Route path="/account" element={<Account account={account} />} /> */}
+        <Route path="/login" element={<Login setAccount={setAccount} />} />
+        {/* <Route path="/account" element={<Account account={account} />} /> */}
       </Routes>
     </Router>
   )

@@ -7,7 +7,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'Cart', 'Log In', 'Account'];
+const navItems = ['Home', 'Cart', 'LogIn', 'Account'];
 
 function NavBar(props) {
     const { window } = props;
