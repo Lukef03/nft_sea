@@ -48,6 +48,21 @@ function Summary({ total, setCart }) { // Destructure the props correctly here
                             ETH {total}
                         </Typography>
                     </Grid>
+                    <Grid item xs={8} sm={8} md={6} lg={8}>
+                        <Typography variant="h6" component="div">
+                            Price in AUD
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={3} sm={3} md={4} lg={3} textAlign={"right"}>
+                        <Typography variant="h6" component="div">
+                            {(total * 2500).toLocaleString('en-AU', {
+                                style: 'currency',
+                                currency: 'AUD',
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2,
+                            })}
+                        </Typography>
+                    </Grid>
                 </Grid>
             </CardContent>
 

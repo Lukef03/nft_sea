@@ -1,4 +1,4 @@
-import { React, useRef, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 import { Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox, Link, Paper, Box, Grid, Typography } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -21,17 +21,18 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 function Login({ setAccount }) {
-    const formRef = useRef(null);
-
     const navigate = useNavigate();
 
-    const [username, setUsername] = useState('');
+    const [username, setUsername] = useState('abcd');
     const [password, setPassword] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const data = new FormData(formRef.current);
+        console.log(username);
+        const data = new FormData(event.currentTarget);
+        console.log(data.get('username'));
         setUsername(data.get('username'));
+        console.log(username);
         setPassword(data.get('password'));
         setAccount({ username });
         navigate('/account');
@@ -73,7 +74,7 @@ function Login({ setAccount }) {
                             <Typography component="h1" variant="h5">
                                 Sign in
                             </Typography>
-                            <Box component="form" noValidate ref={formRef} onSubmit={handleSubmit} sx={{ mt: 1 }}>
+                            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
                                 <TextField
                                     margin="normal"
                                     required
